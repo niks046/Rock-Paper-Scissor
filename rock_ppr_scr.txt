@@ -1,0 +1,58 @@
+package side;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class rock_ppr_scr {
+    public static void main(String[] args) {
+        System.out.println("Enter 0 for rock and 1 for paper and 2 for scissor ");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Your turn: ");
+        int userInput = sc.nextInt();
+        Random rand = new Random(); //--> used to generate a random number
+        int computerInput = rand.nextInt(3); // --> here bound 3 means only three random numbers are to be generated (0,1,2)!
+        if (userInput > 2)
+        {
+            System.out.println("Please enter a valid integer... 0 , 1 or 2 only!!");
+        }
+        else
+        {
+            if(userInput == 0)
+            {
+                System.out.println("You chooses Rock");
+            }
+            else if(userInput == 1)
+            {
+                System.out.println("You chooses Paper");
+            }
+            else
+            {
+                System.out.println("You chooses Scissor");
+            }
+            if(computerInput == 0)
+            {
+                System.out.println("Computer chooses Rock");
+            }
+            else if(computerInput == 1)
+            {
+                System.out.println("Computer chooses Paper");
+            }
+            else
+            {
+                System.out.println("Computer chooses Scissor");
+            }
+            if (userInput == computerInput)
+            {
+                System.out.println("Draw!!");
+            }
+            else if (userInput == 0 && computerInput == 1 || userInput == 1 && computerInput == 2 || userInput == 2 && computerInput == 0) {
+                System.out.println("Computer Wins!!");
+            }
+            else
+            {
+                System.out.println("You Win!!");
+            }
+        }
+    }
+}
+
